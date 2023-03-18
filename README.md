@@ -19,10 +19,12 @@
 - Get all employees
 - Get employee by id
 
-# Stack
+## Stack
 
 - [Node](https://nodejs.org/en) - Node.js is an open-source, cross-platform JavaScript runtime environment.
 - [Express](https://expressjs.com) - Fast, unopinionated, minimalist web framework for Node.js
 - [Prisma](https://www.prisma.io) - Next-generation Node.js and TypeScript ORM
 - [TypeScript](https://www.typescriptlang.org) - TypeScript is a strongly typed programming language that builds on JavaScript, giving you better tooling at any scale.
 - [Zod](https://github.com/colinhacks/zod) - TypeScript-first schema validation with static type inference
+
+- API hosted by [Render](https://render.com) - Render is a unified cloud to build and run all your apps and websites with free TLS certificates, a global CDN, DDoS protection, private networks, and auto deploys from Git.
