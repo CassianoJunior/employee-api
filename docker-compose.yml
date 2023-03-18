@@ -1,0 +1,22 @@
+version: '3.9'
+networks:
+  back:
+    driver: bridge
+
+services:
+  postgres:
+    container_name: postgres_employee
+    image: 'postgres'
+    restart: always
+    ports:
+      - '5432:5432'
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=employee
+    volumes:
+      - data_pg:/data/postgres
+    networks:
+      - back
+volumes:
+  data_pg: null
