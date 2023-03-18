@@ -39,7 +39,7 @@ app.post('/employee', async (req, res) => {
     profilePicture: z.string(),
     jobTitle: z.string(),
     cpf: z.string(),
-    hiringDate: z.date(),
+    hiringDate: z.string(),
   });
 
   try {
@@ -58,7 +58,10 @@ app.post('/employee', async (req, res) => {
     }
 
     const employee = await prisma.employee.create({
-      data,
+      data: {
+        ...data,
+        hiringDate: new Date(data.hiringDate),
+      },
     });
 
     return res.status(201).json(employee);
@@ -80,7 +83,7 @@ app.put('/employee/:id', async (req, res) => {
     profilePicture: z.string().optional(),
     jobTitle: z.string().optional(),
     cpf: z.string().optional(),
-    hiringDate: z.date().optional(),
+    hiringDate: z.string().optional(),
   });
 
   try {
@@ -100,7 +103,10 @@ app.put('/employee/:id', async (req, res) => {
       where: {
         id: id,
       },
-      data,
+      data: {
+        ...data,
+        hiringDate: data.hiringDate && new Date(data.hiringDate),
+      },
     });
 
     return res.status(200).json(employee);
