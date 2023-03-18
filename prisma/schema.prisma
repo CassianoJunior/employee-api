@@ -11,13 +11,15 @@ datasource db {
 }
 
 model Employee {
-  id             String  @id @default(cuid())
+  id             String   @id @default(cuid())
   name           String
-  email          String  @unique
+  cpf            String   @unique
+  email          String   @unique
   phoneNumber    String
   salary         Float
   jobTitle       String
   profilePicture String?
+  hiringDate     DateTime
 
   @@map("employees")
 }

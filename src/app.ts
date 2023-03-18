@@ -38,6 +38,8 @@ app.post('/employee', async (req, res) => {
     salary: z.number(),
     profilePicture: z.string(),
     jobTitle: z.string(),
+    cpf: z.string(),
+    hiringDate: z.date(),
   });
 
   try {
@@ -77,6 +79,8 @@ app.put('/employee/:id', async (req, res) => {
     salary: z.number().optional(),
     profilePicture: z.string().optional(),
     jobTitle: z.string().optional(),
+    cpf: z.string().optional(),
+    hiringDate: z.date().optional(),
   });
 
   try {
